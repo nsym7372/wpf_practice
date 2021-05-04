@@ -1,0 +1,12 @@
+﻿<p:Person xmlns:p="clr-namespace:ConsoleApp1;assembly=ConsoleApp1" 
+          FullName="さんぷる太郎">
+    <p:Person.Salary>300000</p:Person.Salary>
+    <p:Person.Children>
+        <p:ItemCollection>
+            <p:Person FullName="aaa" Id="item1-1" />
+            <p:Person Id="item1-2" />
+            <p:Person Id="item1-3" />
+        </p:ItemCollection>
+    </p:Person.Children>
+
+</p:Person>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfPractice2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPractice2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Button" />
+                    <Image Source="/face.png" Stretch="None" />
+                    <TextBlock Text="Button" />
+                </StackPanel>
+            </Button>
+            <Button Content="文字列" />
+            <Button Name="button3">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" />
+                            <Image Source="{Binding Picture}" Stretch="None" />
+                            <TextBlock Text="{Binding Age, StringFormat={}{0}歳}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Page x:Class="WpfPractice2.DateSample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPractice2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DateSample">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Calendar x:Name="cal" SelectionMode="MultipleRange"/>
+            <Button Content="show" Click="Button_Click" />
+        </StackPanel>
+
+        <Calendar Grid.Row="0" Grid.Column="1"
+                  DisplayDateStart="2021/04/01"
+                  DisplayDateEnd="2021/04/10" />
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="選択日付の書式指定1(long)" />
+            <DatePicker SelectedDateFormat="Long" SelectedDateChanged="DatePicker_SelectedDateChanged" />
+            <Label Content="選択日付の書式指定2(short)" />
+            <DatePicker SelectedDateFormat="Short" SelectedDateChanged="DatePicker_SelectedDateChanged" />
+        </StackPanel>
+
+    </Grid>
+</Page>

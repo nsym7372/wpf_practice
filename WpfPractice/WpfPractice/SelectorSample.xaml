@@ -1,0 +1,68 @@
+﻿<Window x:Class="WpfPractice.SelectorSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPractice"
+        mc:Ignorable="d"
+        Title="SelectorSample" Height="700" Width="600">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Name="TxStatus" FontSize="30" Text="Status" />
+            <CheckBox FontSize="20" Margin="10" Content="Check" Height="50" IsThreeState="True" IsChecked="{x:Null}" VerticalContentAlignment="Center" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Indeterminate="CheckBox_Indeterminate">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2.0" ScaleY="2.0" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+
+            <Expander Header="Grouping 縮小" Margin="10" IsExpanded="True" BorderBrush="Blue">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="10">
+                        <RadioButton Content="AAA" FontSize="20" IsChecked="True"/>
+                        <RadioButton Content="BBB" FontSize="20" />
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <RadioButton Content="CCC" FontSize="20"/>
+                        <RadioButton Content="DDD" FontSize="20" />
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+
+            <Expander Header="Grouping 縮小" Margin="10" IsExpanded="True" BorderBrush="red" Height="100">
+                <StackPanel Orientation="Horizontal">
+
+                    <StackPanel Margin="10">
+                        <RadioButton Content="AAA" FontSize="20" IsChecked="True" GroupName="1"/>
+                        <RadioButton Content="BBB" FontSize="20"  GroupName="1"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <RadioButton Content="CCC" FontSize="20" GroupName="1"/>
+                        <RadioButton Content="DDD" FontSize="20"  GroupName="1"/>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+
+            <GroupBox Header="Group A" FontSize="20" Margin="10">
+                <StackPanel Margin="10">
+                    <RadioButton Content="AAA" FontSize="20" IsChecked="True" GroupName="1"/>
+                    <RadioButton Content="BBB" FontSize="20"  GroupName="1"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox FontSize="20" Margin="10">
+                <GroupBox.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox FontSize="20"  Content="Check"  IsThreeState="True" IsChecked="{x:Null}" VerticalContentAlignment="Center" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Indeterminate="CheckBox_Indeterminate" />
+                        <TextBlock Text=" AAA" FontSize="20" />
+                    </StackPanel>
+                </GroupBox.Header>
+                <StackPanel Margin="10">
+                    <RadioButton Content="AAA" FontSize="20" IsChecked="True" GroupName="1"/>
+                    <RadioButton Content="BBB" FontSize="20"  GroupName="1"/>
+                </StackPanel>
+            </GroupBox>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

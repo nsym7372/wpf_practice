@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfPractice.ResoruceSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPractice"
+        mc:Ignorable="d"
+        Title="ResoruceSample" Height="450" Width="600">
+    <Window.Resources>
+        <SolidColorBrush x:Key="fore" Color="#ffffff"/>
+        <SolidColorBrush x:Key="back" Color="DarkBlue" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.RowSpan="6" Grid.Row="0" Grid.Column="0" Margin="5">
+            <Button Content="AAA" Height="70" FontSize="50" Background="{StaticResource back}" Foreground="{StaticResource fore}" />
+            <Button Content="BBB" Height="70" FontSize="50" Background="{StaticResource back}" Foreground="{StaticResource fore}" />
+            <Button Content="CCC" Height="70" FontSize="50" Background="{StaticResource back}" Foreground="{StaticResource fore}" />
+            <Button Content="DDD" Height="70" FontSize="50" Background="{StaticResource appBackground}" Foreground="{StaticResource appForeground}" />
+            <Button Content="EEE" Height="70" FontSize="50" Background="{StaticResource appBackground}" Foreground="{StaticResource appForeground}" />
+        </StackPanel>
+
+        <Label Grid.Row="0" Grid.Column="1" Margin="5" Content="Label1"/>
+        <Label Grid.Row="0" Grid.Column="2" Margin="5" Content="Label2"/>
+        <Label Grid.Row="0" Grid.Column="3" Margin="5" Content="Label3"/>
+        <Button Grid.Row="1" Grid.Column="1" Margin="5" Content="Button1" Style="{StaticResource fontButtonStyle}"/>
+        <Button Grid.Row="1" Grid.Column="2" Margin="5" Content="Button2" />
+        <Button Grid.Row="1" Grid.Column="3" Margin="5" Content="Button3" />
+
+
+    </Grid>
+</Window>

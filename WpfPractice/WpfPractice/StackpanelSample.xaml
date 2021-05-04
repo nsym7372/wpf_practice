@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfPractice.StackpanelSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPractice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Height="30"/>
+            <TextBox Height="30" />
+            <TextBox Height="30"/>
+            <Button Height="30"/>
+            <StackPanel Orientation="Horizontal" Height="100" Margin="10">
+                <Label Height="30" Width="100" VerticalAlignment="Top" Content="ラベルです"/>
+                <TextBox Height="30" Width="100" VerticalContentAlignment="Top" Text="テキストです"/>
+                <TextBox Height="30" Width="100" />
+                <Button Height="30" Width="100" VerticalAlignment="Bottom" Content="ボタンです"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

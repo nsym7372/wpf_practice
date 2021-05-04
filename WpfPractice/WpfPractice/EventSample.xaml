@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfPractice.EventSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPractice"
+        mc:Ignorable="d"
+        Title="EventSample" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Height="50" Name="ResultLabel" FontSize="35"/>
+            <Button Height="50" Name="AButton" Click="AButton_Click" Content="A" FontSize="40"/>
+            <Button Height="50" Name="ClearButton" Content="Clear" FontSize="40" Click="ClearButton_Click"/>
+
+            <Grid Margin="0, 20, 0, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Click="AAAButton_Click" Content="AAA" Grid.Column="0"></Button>
+                <RepeatButton Click="RepeatButton_Click" Content="Repeat A" Grid.Column="1" Interval="2000" Delay="500" FontSize="30"></RepeatButton>
+            </Grid>
+
+
+
+
+            <Button Margin="30" Click="ExceptionButton_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Fill="Red" Width="15" Height="15" />
+                        <TextBlock Text="Throw Exception" Margin="15, 0, 0, 0" />
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+
+            <ToggleButton Margin="30" Click="ToggleButton_Click" Name="BtToggle" IsChecked="True">
+                <ToggleButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="TxInputString" Text="A" FontSize="30"/>
+                        <TextBlock Text="Input" Margin="15, 0, 0, 0" FontSize="30" />
+                    </StackPanel>
+                </ToggleButton.Content>
+            </ToggleButton>
+            
+        </StackPanel>
+    </Grid>
+</Window>
