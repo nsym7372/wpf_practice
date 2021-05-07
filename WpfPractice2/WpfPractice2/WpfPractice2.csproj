@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="face.png" />
+    <Resource Include="Controls\face.png" />
   </ItemGroup>
 
 </Project>

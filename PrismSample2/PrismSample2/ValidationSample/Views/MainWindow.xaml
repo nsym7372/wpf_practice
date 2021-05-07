@@ -8,13 +8,14 @@
     <StackPanel>
         <TextBox>
             <TextBox.Text>
-                <Binding Path="Message" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                <Binding Path="Message" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
                     <Binding.ValidationRules>
-                        <local:StringLengthValidationRule MaxLength="5" />
+                        <local:StringLengthValidationRule MaxLength="5"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
+
         <Button Content="Click" Command="{Binding SubmitCommand}" />
 
         <!--<ContentControl prism:RegionManager.RegionName="ContentRegion" />-->

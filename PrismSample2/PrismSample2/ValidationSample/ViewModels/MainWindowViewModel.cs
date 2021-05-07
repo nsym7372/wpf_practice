@@ -23,6 +23,13 @@ namespace ValidationSample.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
+        private bool _hasError;
+        public bool HasError
+        {
+            get { return _hasError; }
+            set { SetProperty(ref _hasError, value); }
+        }
+
         public DelegateCommand SubmitCommand { get; }
 
 
