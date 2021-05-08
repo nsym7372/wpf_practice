@@ -27,9 +27,9 @@ namespace WpfPractice2
         {
             InitializeComponent();
 
-            var data = new ObservableCollection<Person>(
+            var data = new ObservableCollection<ConsoleApp1.Person>(
 
-                Enumerable.Range(1, 100).Select(r => new Person
+                Enumerable.Range(1, 100).Select(r => new ConsoleApp1.Person
                 {
                     FullName = $"しめい {r}",
                     Gender = (r % 2 == 0) ? Gender.Men : Gender.Women,

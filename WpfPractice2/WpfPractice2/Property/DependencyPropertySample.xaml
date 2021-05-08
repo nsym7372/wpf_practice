@@ -1,0 +1,21 @@
+﻿<Page x:Class="WpfPractice2.DependencyPropertySample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPractice2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Properties">
+    <!--https://blog.okazuki.jp/entry/2014/08/17/220810-->
+    <StackPanel>
+        <Button Name="Single" Click="Single_Click" Content="Default Value Single" />
+        <Button Name="Object" Click="Object_Click" Content="Default Value Object" />
+        <Button Name="Changed" Click="Changed_Click" Content="Property Changed" />
+        <Button Name="Coerce" Click="Coerce_Click" Content="Coerce" />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="value" />
+            <TextBox Name="TxCoerce" Width="100" />
+        </StackPanel>
+    </StackPanel>
+</Page>

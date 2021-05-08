@@ -26,32 +26,32 @@ namespace WpfPractice2
         {
             InitializeComponent();
 
-            tree.ItemsSource = new List<Person>
+            tree.ItemsSource = new List<ConsoleApp1.Person>
             {
-                new Person()
+                new ConsoleApp1.Person()
                 {
                     FullName = "田中一郎",
                     Children = new ItemCollection()
                     {
-                        new Person(){FullName = "田中二郎"},
-                        new Person(){FullName = "田中三郎"},
-                        new Person()
+                        new ConsoleApp1.Person(){FullName = "田中二郎"},
+                        new ConsoleApp1.Person(){FullName = "田中三郎"},
+                        new ConsoleApp1.Person()
                         {
                             FullName = "田中四郎",
                             Children = new ItemCollection()
                             {
-                                new Person{FullName = "木村はな"},
-                                new Person{FullName = "木村うめ"}
+                                new ConsoleApp1.Person{FullName = "木村はな"},
+                                new ConsoleApp1.Person{FullName = "木村うめ"}
                             }
                         }
                     }
                 },
-                new Person
+                new ConsoleApp1.Person
                 {
                     FullName = "鈴木四郎",
                     Children = new ItemCollection
                     {
-                        new Person {FullName = "鈴木五郎"}
+                        new ConsoleApp1.Person {FullName = "鈴木五郎"}
                     }
                 }
             };

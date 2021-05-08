@@ -8,7 +8,7 @@ namespace WpfPractice2.Command
 {
     using System.Windows.Input;
     using System.Windows;
-    class DelegateCommandViewModel : PropertyChange.BindableBase
+    class DelegateCommandViewModel : PropertySample.BindableBase
     {
         public DelegateCommand UpdateNowCommand { get; set; }
 

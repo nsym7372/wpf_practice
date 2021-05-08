@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfPractice2.PropertyChange
+namespace WpfPractice2.PropertySample
 {
     using System.ComponentModel;
     class PropertyChangeViewModel : INotifyPropertyChanged
