@@ -33,6 +33,8 @@ namespace WpfPractice2.Controls
             listbox.ItemsSource = source;
 
             listbox1.ItemsSource = source;
+
+            listbox2.ItemsSource = source;
             
 
         }
@@ -41,6 +43,19 @@ namespace WpfPractice2.Controls
     {
         public string Name { get; set; }
         public int Age { get; set; }
+        public bool IsOver25 { get { return Age >= 25; } }
+    }
+
+    public class PersonDataTemplateSelector : DataTemplateSelector
+    {
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            var p = (ControlsPerson)item;
+            var key = (p.Age % 2 == 0) ? "PersonTemplate" : "PersonTemplate1";
+            return (DataTemplate)((FrameworkElement)container).FindResource(key);
+
+        }
+
     }
 
 

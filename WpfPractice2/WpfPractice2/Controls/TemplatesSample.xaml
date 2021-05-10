@@ -8,8 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TemplatesSample">
     <Page.Resources>
+        <!--リソースにテンプレートを定義できる-->
         <DataTemplate x:Key="PersonTemplate" DataType="{x:Type local:ControlsPerson}">
-            <Border BorderBrush="Blue" BorderThickness="3">
+            <Border x:Name="border" BorderBrush="Blue" BorderThickness="3">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Name" />
                     <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
@@ -17,16 +18,35 @@
                     <TextBlock Text="{Binding Age}" VerticalAlignment="Center" />
                 </StackPanel>
             </Border>
+            
+            <!-- bindingとvalueが一致した場合に有効 -->
+            <DataTemplate.Triggers>  
+                <DataTrigger Binding="{Binding IsOver25}" Value="True">
+                    <Setter TargetName="border" Property="BorderBrush" Value="Aqua"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
         </DataTemplate>
+        
+        <!--TemplateSelectorで切り替える-->
+        <DataTemplate x:Key="PersonTemplate1" DataType="{x:Type local:ControlsPerson}">
+            <Border x:Name="border" BorderBrush="LightGreen" BorderThickness="3">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name" />
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+        
     </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         
-        
+        <!--通常-->
         <ListBox Name="listbox" Grid.Column="0">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type local:ControlsPerson}">
@@ -42,7 +62,14 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
+        <!--リソースでdatatemplate指定-->
         <ListBox Name="listbox1" ItemTemplate="{StaticResource PersonTemplate}" Grid.Column="1" />
 
+        <!--templateselectorで切り替え-->
+        <ListBox Name="listbox2" Grid.Column="2">
+            <ListBox.ItemTemplateSelector>
+                <local:PersonDataTemplateSelector />
+            </ListBox.ItemTemplateSelector>
+        </ListBox>
     </Grid>
 </Page>

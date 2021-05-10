@@ -1,0 +1,19 @@
+﻿<Page x:Class="WpfPractice2.Design.ResourceSample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPractice2.Design"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ResourceSample">
+    <Page.Resources>
+        <ImageBrush x:Key="FaceBrush" ImageSource="../Controls/face.png" />
+        <SolidColorBrush x:Key="RedBrush" Color="Red" />
+    </Page.Resources>
+    <StackPanel>
+        <Border x:Name="border" Width="100" Height="100" Background="{StaticResource FaceBrush}" />
+        <Border Width="100" Height="100" Background="{StaticResource FaceBrush}" />
+        <Border Width="100" Height="100" Background="{DynamicResource FaceBrush}" />
+    </StackPanel>
+</Page>
