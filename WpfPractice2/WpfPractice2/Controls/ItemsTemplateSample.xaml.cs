@@ -18,9 +18,9 @@ namespace WpfPractice2.Controls
     /// <summary>
     /// TemplatesSample.xaml の相互作用ロジック
     /// </summary>
-    public partial class TemplatesSample : Page
+    public partial class ItemsTemplateSample : Page
     {
-        public TemplatesSample()
+        public ItemsTemplateSample()
         {
             InitializeComponent();
 

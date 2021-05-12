@@ -1,4 +1,4 @@
-﻿<Page x:Class="WpfPractice2.Controls.TemplatesSample"
+﻿<Page x:Class="WpfPractice2.Controls.ItemsTemplateSample"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -64,6 +64,7 @@
 
         <!--リソースでdatatemplate指定-->
         <ListBox Name="listbox1" ItemTemplate="{StaticResource PersonTemplate}" Grid.Column="1" />
+
 
         <!--templateselectorで切り替え-->
         <ListBox Name="listbox2" Grid.Column="2">
