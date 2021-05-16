@@ -1,0 +1,85 @@
+﻿<Page x:Class="WpfPractice2.BindingSample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPractice2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BindingSample"
+      x:Name="thispage">
+    <Page.Resources>
+        <local:BindingPerson x:Key="ResrouceInstance" Name="あいうえお" Age="10" />
+    </Page.Resources>
+
+    <StackPanel>
+        <TextBlock Name="tx1" Text="{Binding Name}" /> <!-- datacontextのName -->
+        <TextBlock Name="tx2" Text="{Binding Name, Source={StaticResource ResrouceInstance}}" /> <!--xmalで作ったインスタンス-->
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="デフォルト（2way, lostfocus)" Grid.Column="0" Grid.Row="0" />
+            <TextBox Text="{Binding Name}" Grid.Column="1"  Grid.Row="0" />
+
+            <TextBlock Text="oneway" Grid.Column="0" Grid.Row="1" />
+            <TextBox Text="{Binding Name, Mode=OneWay}" Grid.Column="1" Grid.Row="1"/>
+
+            <TextBlock Text="twoway, propertychanged" Grid.Column="0" Grid.Row="2" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"  Grid.Row="2" />
+            
+            <Button Content="フォーカス外れたタイミングで同期" Grid.Row="3" Grid.ColumnSpan="2" />
+
+            <TextBlock Text="年齢" Grid.Column="0" Grid.Row="4" />
+            <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"  Grid.Row="4" />
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Validation" Grid.ColumnSpan="2" />
+
+            <TextBlock Text="ToolTip" Grid.Row="1" Grid.Column="0" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="2.5" 
+                ToolTip="{Binding (Validation.Errors)/ErrorContent, RelativeSource={RelativeSource Self}}" Grid.Row="1" Grid.Column="1"/>
+
+            <TextBlock Text="エラーテキスト" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="2.5, 2.5, 15, 2.5" Grid.Row="2" Grid.Column="1">
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <AdornedElementPlaceholder />
+                            <TextBlock DockPanel.Dock="Right" Text="*" Foreground="Red" ToolTip="{Binding /ErrorContent}" />
+                        </DockPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+        </Grid>
+
+
+
+
+
+    </StackPanel>
+
+</Page>
