@@ -1,0 +1,47 @@
+﻿<Page x:Class="WpfPractice2.Bindings.CollectionBIndingSample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPractice2.Bindings"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CollectionBIndingSample">
+
+
+    <Grid>
+            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="追加削除">
+                <MenuItem Header="追加(_F)" Click="MenuItem_Click" />
+                <MenuItem Name="menuClear" Header="クリア(_E)" Click="menuClear_Click" />
+            </MenuItem>
+            <MenuItem Header="フィルタ">
+                <MenuItem Name="menuFilter" Header="追加(_E)" Click="menuFilterAdd_Click" />
+                <MenuItem Name="menuFilterClear" Header="クリア(_E)" Click="menuFilterClear_Click" />
+            </MenuItem>
+
+            <MenuItem Header="ソート">
+                <MenuItem Name="menuSort" Header="昇順" Click="menuSort_Click" />
+                <MenuItem Name="menuSortRemove" Header="クリア(_E)" Click="menuSortRemove_Click" />
+            </MenuItem>
+            
+        </Menu>
+
+        <ListBox ItemsSource="{Binding}" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Age}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+</Page>

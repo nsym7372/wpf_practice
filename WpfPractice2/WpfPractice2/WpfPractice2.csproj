@@ -22,8 +22,4 @@
     <Resource Include="Controls\face.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Binding_test\" />
-  </ItemGroup>
-
 </Project>
