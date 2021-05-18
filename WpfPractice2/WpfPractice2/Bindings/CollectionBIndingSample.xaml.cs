@@ -77,6 +77,16 @@ namespace WpfPractice2.Bindings
             var cv = CollectionViewSource.GetDefaultView(people_);
             cv.Filter = x => { return true; };
         }
+
+        private void Group_Click(object sender, RoutedEventArgs e)
+        {
+            //var style = new GroupStyle();
+            ////style.HeaderTemplate = (new DataTemplate()).child
+            //var d = new DataTemplate();
+            //d.
+            ////FlatListbox.GroupStyle.Add()
+            FlatListbox.Visibility = Visibility.Collapsed;
+        }
     }
 
     public class CollectionBindingPerson

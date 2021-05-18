@@ -29,10 +29,12 @@
                 <MenuItem Name="menuSort" Header="昇順" Click="menuSort_Click" />
                 <MenuItem Name="menuSortRemove" Header="クリア(_E)" Click="menuSortRemove_Click" />
             </MenuItem>
-            
+
+            <MenuItem Name="Group" Header="グループ" Click="Group_Click" />
+
         </Menu>
 
-        <ListBox ItemsSource="{Binding}" Grid.Row="1">
+        <ListBox Name="FlatListbox" ItemsSource="{Binding}" Grid.Row="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -42,6 +44,19 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <ListBox>
+            <ListBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name, StringFormat={}{0}0代}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListBox.GroupStyle>
+        </ListBox>
+        
     </Grid>
 
 </Page>
