@@ -45,7 +45,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox>
+        <ListBox Name="GroupListBox" ItemsSource="{Binding}" Grid.Row="1">
             <ListBox.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
@@ -55,6 +55,14 @@
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
             </ListBox.GroupStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Age}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         
     </Grid>

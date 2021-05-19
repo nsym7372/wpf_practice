@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 namespace WpfPractice2.Bindings
 {
     using System.Collections.ObjectModel;
+    using System.Globalization;
 
     /// <summary>
     /// CollectionBIndingSample.xaml の相互作用ロジック
@@ -26,6 +27,7 @@ namespace WpfPractice2.Bindings
         public CollectionBIndingSample()
         {
             InitializeComponent();
+            GroupListBox.Visibility = Visibility.Collapsed;
             people_ = new ObservableCollection<CollectionBindingPerson>(
                 Enumerable.Range(0, 100).Select(r => new CollectionBindingPerson
                 {
@@ -80,12 +82,24 @@ namespace WpfPractice2.Bindings
 
         private void Group_Click(object sender, RoutedEventArgs e)
         {
-            //var style = new GroupStyle();
-            ////style.HeaderTemplate = (new DataTemplate()).child
-            //var d = new DataTemplate();
-            //d.
-            ////FlatListbox.GroupStyle.Add()
+            var cv = CollectionViewSource.GetDefaultView(this.people_);
+            cv.GroupDescriptions.Add(new PropertyGroupDescription("Age", new AgeConverter()));
+
             FlatListbox.Visibility = Visibility.Collapsed;
+            GroupListBox.Visibility = Visibility.Visible;
+        }
+    }
+
+    public class AgeConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (int)value / 10;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 
